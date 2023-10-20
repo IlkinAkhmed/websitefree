@@ -1,0 +1,18 @@
+button {
+  text-align: center;
+  color: white;
+  line-height: 55px;
+  border-width: 6px;
+  padding: 0 46px;
+  font-weight: 500;
+  font-size: 15px;
+  font-size: 20px;
+  // background-color: rgb(46, 145, 145);
+  background-image: linear-gradient(
+    to right,
+    rgb(53, 97, 218),
+    rgb(71, 166, 255)
+  );
+  border-radius: 35px;
+  border: 7px solid rgb(175, 231, 231);
+}
