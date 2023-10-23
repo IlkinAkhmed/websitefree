@@ -12,6 +12,7 @@ nav {
   top: 0;
   left: 0;
   background-color: white;
+  z-index: 1;
 }
 nav .navInside {
   display: flex;
@@ -71,33 +72,36 @@ img {
 
 #home {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-image: url(https://preview.colorlib.com/theme/sierra/img/home-slider/slider-bg-1.png.webp);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
 }
 #home .mainTexts {
-  max-width: 70%;
-  height: 100%;
+  max-width: 60%;
+  min-height: 100%;
   margin: auto;
   display: flex;
   align-items: center;
 }
 #home .mainTexts .choose {
-  width: 70%;
+  width: 60%;
   font-family: "Roboto", sans-serif;
 }
 #home .mainTexts .choose h1 {
-  font-size: 80px;
+  font-size: 70px;
   margin-bottom: 25px;
 }
 #home .mainTexts .choose p {
   font-size: 20px;
   margin-bottom: 25px;
 }
+#home .mainTexts .compImage {
+  width: 40%;
+}
 
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 980px) {
   #home .mainTexts .choose {
     width: 100%;
   }
@@ -115,7 +119,7 @@ img {
 }
 #young .rows {
   width: 60%;
-  height: 100%;
+  min-height: 100%;
   margin: auto;
   padding: 80px 0px;
 }
@@ -138,12 +142,18 @@ img {
 #young .rows .textrow h2 {
   font-size: 60px;
   font-family: "Roboto", sans-serif;
+  margin-bottom: 20px;
 }
 #young .rows .boxrow {
   display: flex;
+  gap: 20px;
 }
 #young .rows .boxrow .box {
   width: 33.3%;
+  border: 1px solid gray;
+  box-sizing: border-box;
+  border-radius: 10px;
+  transition: 0.8s;
 }
 #young .rows .boxrow .box .boxInside {
   padding: 30px;
@@ -155,6 +165,7 @@ img {
 #young .rows .boxrow .box .boxInside i {
   color: gray;
   font-size: 60px;
+  opacity: 0.4;
 }
 #young .rows .boxrow .box .boxInside h2 {
   font-family: "Roboto", sans-serif;
@@ -169,8 +180,12 @@ img {
   transition: 0.7s;
 }
 #young .rows .boxrow .box:hover .read {
-  transition: 0.5s;
-  opacity: 1;
+  transition: 0.8s;
+  opacity: 0.8;
+}
+#young .rows .boxrow .box:hover {
+  transform: scale(1.05);
+  transition: 0.8s;
 }
 
 @media only screen and (max-width: 908px) {
@@ -187,7 +202,221 @@ img {
     justify-content: center;
   }
   #young .rows .boxrow .box {
-    width: 50%;
+    width: 47%;
+  }
+}
+#portfolio {
+  font-family: "Roboto", sans-serif;
+  height: fit-content;
+}
+#portfolio .iphone {
+  padding: 60px 50px;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+}
+#portfolio .iphone .best {
+  width: 40%;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  background-image: url(https://preview.colorlib.com/theme/sierra/img/3d-slider-shap.png.webp);
+  background-size: 595px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#portfolio .iphone .best .chriss {
+  max-width: 50%;
+  margin: auto;
+}
+#portfolio .iphone .best .chriss h2 {
+  margin-bottom: 20px;
+}
+#portfolio .iphone .best .chriss p {
+  color: wheat;
+}
+#portfolio .iphone .best .chriss .profile {
+  display: flex;
+  margin-top: 30px;
+  align-items: center;
+  gap: 10px;
+}
+#portfolio .iphone .best .chriss .profile img {
+  width: 50px;
+  min-height: 50px;
+}
+#portfolio .iphone .best .chriss .profile .profileImage :nth-child(1) {
+  margin-bottom: 10px;
+  color: black;
+}
+#portfolio .iphone .best .chriss .profile .profileImage p {
+  font-weight: bold;
+}
+#portfolio .iphone .features {
+  display: flex;
+  min-height: 100%;
+  width: 60%;
+}
+#portfolio .iphone .features .stand {
+  display: flex;
+  align-items: center;
+  width: 70%;
+}
+#portfolio .iphone .features .stand .hide {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  max-width: 60%;
+  margin: auto;
+}
+#portfolio .iphone .features .stand .hide p {
+  color: gray;
+  font-weight: bold;
+}
+#portfolio .iphone .features .stand .hide img {
+  width: 50px;
+  min-height: 50px;
+}
+#portfolio .iphone .features .iphoneImage {
+  width: 30%;
+}
+#portfolio .iphone .features .iphoneImage img {
+  width: 100%;
+}
+
+@media only screen and (max-width: 908px) {
+  #portfolio .iphone {
+    flex-wrap: wrap;
+  }
+  #portfolio .iphone .best {
+    width: 100%;
+  }
+  #portfolio .iphone .features {
+    width: 100%;
+  }
+  #portfolio .iphone .features .stand {
+    width: 100%;
+  }
+  #portfolio .iphone .features .iphoneImage {
+    display: none;
+  }
+}
+@media only screen and (min-width: 909px) and (max-width: 1350px) {
+  #portfolio .iphone {
+    flex-wrap: wrap;
+  }
+  #portfolio .iphone .best {
+    width: 100%;
+  }
+  #portfolio .iphone .features {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  #portfolio .iphone .features .stand {
+    width: 70%;
+  }
+  #portfolio .iphone .features .iphoneImage {
+    width: 30%;
+  }
+}
+#strong {
+  width: 100%;
+  min-height: 1000px;
+}
+#strong .team {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  padding: 100px 0;
+}
+#strong .team .teamInside {
+  width: 60%;
+  display: flex;
+  align-items: center;
+}
+#strong .team .teamInside .build {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  max-width: 60%;
+  margin: auto;
+}
+#strong .team .teamInside .build p {
+  color: gray;
+  font-weight: bold;
+}
+#strong .team .teamInside .build img {
+  width: 50px;
+  min-height: 50px;
+}
+#strong .team .teamInside .build ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+#strong .team .teamInside .build ul li {
+  width: 46%;
+  list-style-type: disc;
+  color: aqua;
+}
+#strong .team .teamInside .build ul li a {
+  color: gray;
+  transition: 0.5s;
+}
+#strong .team .teamInside .build ul li a:hover {
+  color: aqua;
+  transition: 0.5s;
+}
+#strong .team .images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+#strong .team .images img {
+  width: 46%;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+#strong .team .images img:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+@media only screen and (max-width: 908px) {
+  #strong .team {
+    flex-wrap: wrap;
+  }
+  #strong .team .teamInside {
+    width: 100%;
+  }
+  #strong .team .teamInside .build ul li {
+    width: 100%;
+  }
+  #strong .team .teamInside .images {
+    width: 100%;
+  }
+  #strong .team .teamInside .images img {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 909px) and (max-width: 1350px) {
+  #strong .team {
+    flex-wrap: wrap;
+  }
+  #strong .team .teamInside {
+    width: 100%;
+  }
+  #strong .team .teamInside .build ul li {
+    width: 100%;
+  }
+  #strong .team .teamInside .images {
+    width: 100%;
+    justify-content: center;
+  }
+  #strong .team .teamInside .images img {
+    width: 0%;
   }
 }
 button {
@@ -199,7 +428,7 @@ button {
   font-weight: 500;
   font-size: 15px;
   font-size: 20px;
-  background-image: linear-gradient(to right, rgb(53, 97, 218), rgb(71, 166, 255));
+  background-image: linear-gradient(to right, rgb(71, 166, 255), purple);
   border-radius: 35px;
   border: 7px solid rgb(175, 231, 231);
 }/*# sourceMappingURL=main.css.map */

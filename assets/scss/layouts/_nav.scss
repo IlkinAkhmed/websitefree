@@ -11,7 +11,7 @@ nav{
     top: 0;
     left: 0;
     background-color: white;
-
+    z-index: 1;
     .navInside{
         display: flex;
         max-width: 95%;
